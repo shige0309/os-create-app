@@ -1,0 +1,16 @@
+.work-title {
+    margin: 4rem 0 10rem;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #fff;
+}
+
+.work-detail {
+    text-align: center;
+}
+
+@media screen and (max-width: 576px){
+    .work-title {
+        font-size: 6vw;
+    }
+}

@@ -1,0 +1,15 @@
+.c-blog-register {
+    margin: 0 0 4rem;
+}
+
+.DraftEditor-editorContainer {
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #000;
+}
+
+.form-image-show {
+    margin: 0 0 1rem;
+    max-width: 30rem;
+}

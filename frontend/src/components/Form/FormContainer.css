@@ -1,0 +1,10 @@
+.c-form-container {
+    padding: 6rem;
+    background-color: #f7f7f7;
+}
+
+@media screen and (max-width: 769px) {
+    .c-form-container {
+        padding: 2rem;
+    }
+}

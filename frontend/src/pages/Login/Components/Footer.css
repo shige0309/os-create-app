@@ -1,0 +1,22 @@
+.footer {
+    margin: 15rem 0 0;
+    padding: 3rem 0 3rem;
+    background-color: #000;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.footer small {
+    color: #fff;
+}
+
+@media screen and (max-width: 769px){
+    .footer {
+        padding: 3rem 0 3rem;
+    }
+
+    .footer small {
+        font-size: 3vw;
+    }
+}

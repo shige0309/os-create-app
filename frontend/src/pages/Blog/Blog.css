@@ -1,0 +1,46 @@
+.blog-title-date {
+    margin: 6rem 0 7rem;
+    color: #fff;
+}
+
+.blog-date {
+    margin: 0 0 1rem;
+    display: block;
+}
+
+.blog-title {
+    font-size: 3.6rem;
+}
+
+/* .blog-content p {
+    margin-bottom: 3rem;
+} */
+
+.blog-thumbnail {
+    margin-bottom: 3rem;
+}
+
+.blog-content h1 {
+    margin: 4rem 0 2rem;
+    padding: 2rem;
+    font-size: 2.4rem;
+    color: #fff;
+    background-color: #000;
+}
+
+.blog-content h2 {
+    margin: 4rem 0 1rem;
+    font-size: 2rem;
+}
+
+.blog-edit a {
+    margin: 2rem 0 0;
+    display: block;
+    text-align: right;
+}
+
+@media screen and (max-width: 576px){
+    .blog-title {
+        font-size: 6vw;
+    }
+}

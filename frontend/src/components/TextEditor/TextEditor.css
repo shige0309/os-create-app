@@ -1,0 +1,49 @@
+.form-def button {
+    margin: 0 5px 5px 0;
+    padding: 0 10px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.form-def .alignCenter {
+    text-align: center;
+}
+
+.form-def .alignLeft {
+    text-align: left;
+}
+
+.form-def .alignRight {
+    text-align: right;
+}
+
+.form-def h1 {
+    font-size: 24px;
+}
+
+.form-def h2 {
+    font-size: 20px;
+}
+
+.form-def h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form-def a {
+    color: #1a0dab;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.form-def a:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 576px){
+    .form-def a {
+        color: 	#1558d6;
+    }
+}

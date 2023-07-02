@@ -1,0 +1,11 @@
+{
+    "buildCommand": "cd frontend && yarn install && yarn build",
+    "outputDirectory": "frontend/build",
+    "framework": "react",
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/index.js"
+        }
+    ]
+}

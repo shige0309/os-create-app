@@ -1,0 +1,94 @@
+.contact-text {
+    margin: 3rem 0 7rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.7;
+}
+
+.form-def {
+    margin: 0 0 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-def dt {
+    width: 20%;
+}
+
+.form-def dd {
+    width: 80%;
+}
+
+.contact-button {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.contact-thanks-heading {
+    margin: 0 0 4rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.contact-thanks-text {
+    margin: 0 0 4rem;
+    text-align: center;
+}
+
+.form-attention {
+    color: #f00;
+}
+
+.form-topLink {
+    margin: 2rem 0 0;
+    text-align: center;
+}
+
+.form-def textarea {
+    font-size: 1.6rem;
+}
+
+.contact-button-return {
+    margin: 0 0 2rem;
+}
+
+.contact-button-return .c-form-button {
+    background-color: #000;
+}
+
+.contact-button-return .c-form-button::after {
+    left: 3rem;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+@media screen and (max-width: 769px){
+    .form-def {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-def dt {
+        margin: 0 0 1rem;
+        width: 100%;
+    }
+    
+    .form-def dd {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 576px){
+    .contact-text {
+        margin: 6rem 0 5rem;
+        text-align: left;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+
+    .form-def {
+        margin: 0 0 2rem;
+    }
+}

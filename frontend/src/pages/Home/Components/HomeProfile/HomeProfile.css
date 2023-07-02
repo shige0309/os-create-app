@@ -1,0 +1,77 @@
+.c-homeProfile {
+    margin: 10rem 0 0;
+}
+
+.c-homeProfile-card {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    filter: drop-shadow(0 0 0.3rem rgba(0,0,0,.6));
+}
+
+.c-homeProfile-card-block {
+    width: calc(50% - 2rem);
+}
+
+.c-homeProfile-card-block figure {
+    background-color: #fff;
+}
+
+.c-homeProfile-card-block figcaption {
+    padding: 2rem;
+}
+
+.c-homeProfile-card-block:nth-child(2) {
+    margin: 10rem 0 0;
+}
+
+.c-homeProfile-card-image {
+    position: relative;
+}
+
+.c-homeProfile-card-nameJp {
+    font-weight: 700;
+}
+
+.c-homeProfile-card-nameEn {
+    font-size: 1.4rem;
+    margin: 0 0 2rem;
+}
+
+.c-homeProfile-card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateY(-50%) translateX(-50%);
+    color: #fff;
+}
+
+.c-homeProfile-card-block-def {
+    margin: 0 0 2rem;
+}
+
+.c-homeProfile-card-block-def dt {
+    font-weight: 700;
+}
+
+.c-homeProfile-card-block-def dd {
+    margin: 0 0 3rem;
+}
+
+.c-homeProfile-card-block-def dd:last-of-type {
+    margin: 0;
+}
+
+@media screen and (max-width: 769px){
+    .c-homeProfile-card {
+        flex-direction: column;
+    }
+
+    .c-homeProfile-card-block {
+        width: 100%;
+    }
+
+    .c-homeProfile-card-block:nth-child(2) {
+        margin: 0;
+    }
+}

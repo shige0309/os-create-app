@@ -1,0 +1,80 @@
+.c-contact a {
+    padding: 1.3rem;
+    background-color: #ebbC50;
+    display: block;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    transition: .4s;
+}
+
+.c-contact a:hover {
+    padding: 1.3rem 0 1.3rem 1.3rem;
+    background-color: #000;
+}
+
+.c-contact a:hover .c-contact-mail img {
+    transform: scale(1.3);
+}
+
+.c-contact a::after {
+    margin: 0 6rem 0 0;
+    content: "";
+    background-image: url(../../../public/icon/arrow-right.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 3.3rem;
+    height: 3.3rem;
+    transition: .4s;
+}
+
+.c-contact-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.c-contact-mail {
+    background-color: #fff;
+    width: 12.8rem;
+    height: 12.8rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-contact-mail img {
+    transition: .4s;
+}
+
+.c-contact-text {
+    margin: 0 0 0 6rem;
+    font-size: 3.8rem;
+    color: #fff;
+}
+
+@media screen and (max-width: 576px){
+    .c-contact-mail {
+        width: 5rem;
+        height: 5rem;
+    }
+    .c-contact-mail img {
+        width: 50%;
+        height: 40%;
+    }
+
+    .c-contact-text {
+        margin: 0 0 0 2rem;
+        font-size: 6vw;
+    }
+
+    .c-contact a::after {
+        margin: 0 1rem 0 0;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+}
