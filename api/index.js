@@ -35,4 +35,8 @@ app.use("/api/upload", uploadRoute);
 app.use("/api/email", emailRoute);
 app.use("/api/imageUpload", imageUploadRoute);
 
+router.get("/", async (req, res) => {
+    res.json("Hello");
+});
+
 // app.listen(PORT, () => console.log("サーバーが起動しました。"));
