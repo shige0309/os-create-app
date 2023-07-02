@@ -13,7 +13,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 //データベース接続
-mongoose.connect(process.env.DATABASEURL)
+mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log("DBと接続中...");
 }).catch((err) => {
