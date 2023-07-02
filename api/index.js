@@ -22,7 +22,11 @@ mongoose.connect(process.env.MONGO_URL)
 
 //ミドルウェア
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-app.use(cors({ origin: true, credentials: false }));
+app.use(cors({ 
+    origin: [process.env.ORIGIN_URL],
+    credentials: true,
+    methods: ["POST", "GET", "PUT"],
+}));
 app.use(express.json());
 app.use("/api/admin", adminRoute);
 app.use("/api/blog", blogRoute);

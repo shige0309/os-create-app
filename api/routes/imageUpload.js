@@ -37,8 +37,8 @@ router.post("/", upload.single("file"), async (req, res) => {
         Key: req.body.folder + req.body.name,
         Body: req.file.buffer,
         ContentType: req.file.mimetype,
-        ACL: "public-read"
     };
+    
 
     try {
         const data = await s3.send(new PutObjectCommand(uploadParams));
