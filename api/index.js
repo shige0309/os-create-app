@@ -14,7 +14,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 //データベース接続
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL);
 // .then(() => {
 //     console.log("DBと接続中...");
 // }).catch((err) => {
@@ -40,4 +40,5 @@ router.get("/", async (req, res) => {
     res.json("Hello");
 });
 
+module.exports = app;
 // app.listen(PORT, () => console.log("サーバーが起動しました。"));
