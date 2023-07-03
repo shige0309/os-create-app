@@ -13,12 +13,12 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 //データベース接続
-mongoose.connect(process.env.MONGO_URL);
-// .then(() => {
-//     console.log("DBと接続中...");
-// }).catch((err) => {
-//     console.log(err);
-// })
+mongoose.connect(process.env.MONGO_URL)
+.then(() => {
+    console.log("DBと接続中...");
+}).catch((err) => {
+    console.log(err);
+})
 
 //ミドルウェア
 app.use("/images", express.static(path.join(__dirname, "public/images")));
