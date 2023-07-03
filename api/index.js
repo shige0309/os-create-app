@@ -1,5 +1,4 @@
 const express = require("express");
-const router = express.Router();
 const app = express();
 const adminRoute = require("./routes/admin");
 const blogRoute = require("./routes/blog");
@@ -36,7 +35,7 @@ app.use("/api/upload", uploadRoute);
 app.use("/api/email", emailRoute);
 app.use("/api/imageUpload", imageUploadRoute);
 
-router.get("/", async (req, res) => {
+app.get("/", async (req, res) => {
     res.json("Hello");
 });
 
