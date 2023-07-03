@@ -12,7 +12,7 @@ export const HomeWork = () => {
   useEffect(() => {
     const fetchWorks = async () => {
       const result = await getWorks();
-      console.log(result);
+      console.log(result.data);
       if(result) {
         setWorks(result.data);
       }
