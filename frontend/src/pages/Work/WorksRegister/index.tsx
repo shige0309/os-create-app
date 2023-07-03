@@ -13,6 +13,7 @@ import { useWork } from "hooks/useWork";
 import { Alert } from "components/Alert";
 import {useUploadImage} from "hooks/useUploadImage";
 import "./WorksRegister.css";
+import { Head } from "components/Head";
 
 export const WorksRegister = () => {
   const {admin} = useAppSelector((state) => state);
@@ -114,6 +115,7 @@ export const WorksRegister = () => {
 
   return (
     <>
+      <Head title={"WORKS作成"} description={"WORKS作成"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

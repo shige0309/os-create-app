@@ -16,6 +16,7 @@ import { linkDecorator } from "components/TextEditor/Link"
 import { useUploadImage } from "hooks/useUploadImage";
 import { useBlog } from "hooks/useBlog";
 import "./BlogRegister.css"
+import { Head } from "components/Head"
 
 export const BlogRegister = () => {
   const {admin} = useAppSelector((state) => state);
@@ -104,6 +105,7 @@ export const BlogRegister = () => {
 
   return (
     <>
+      <Head title={"BLOG作成"} description={"BLOG作成"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

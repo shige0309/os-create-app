@@ -19,6 +19,7 @@ import { useParams } from "react-router-dom"
 import { GetBlogType } from "Type"
 import { AxiosResponse } from "axios"
 import "./BlogUpdate.css"
+import { Head } from "components/Head"
 
 export const BlogUpdate = () => {
   const PUBLIC_FOLDER = process.env.REACT_APP_S3_OBJ_URL;
@@ -130,6 +131,7 @@ export const BlogUpdate = () => {
 
   return (
     <>
+      <Head title={"BLOG更新"} description={"BLOG更新"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>
