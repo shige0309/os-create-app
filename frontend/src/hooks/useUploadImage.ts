@@ -3,6 +3,7 @@ import axios from "axios";
 
 
 export const useUploadImage = () => {
+    const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
     
     const prepareAndUploadImages = (
         folder: string,
@@ -56,7 +57,7 @@ export const useUploadImage = () => {
                 data.append("folder", folder);
 
                 try {
-                    await axios.post("/imageUpload", data);
+                    await axios.post(REACT_APP_BACKEND_URL + "/imageUpload", data);
                 } catch (error) {
                     alert(`画像のアップロードに失敗しました。${error}`);
                 }
