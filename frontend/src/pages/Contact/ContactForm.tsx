@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { InputFormType } from "Type";
 import { setContact } from "stores/slice/contactSlice";
 import { useNavigate } from "react-router-dom";
+import { Head } from "components/Head";
 import "./Contact.css";
 
 export const ContactFormPage = () => {
@@ -32,6 +33,7 @@ export const ContactFormPage = () => {
 
   return (
     <>
+      <Head title={"お問い合わせ"} description={"お問い合わせ"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

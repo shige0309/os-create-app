@@ -6,11 +6,13 @@ import { HomeProfile } from "./Components/HomeProfile";
 import { HomeWork } from "./Components/HomeWork";
 import { HomeBlog } from "./Components/HomeBlog";
 import { Sidebar } from "components/Sidebar/Front";
+import { Head } from "components/Head";
 import { Footer } from "components/Footer";
 
 export const HomePage = () => {
   return (
     <>
+    <Head title={null} description={null}/>
     <Sidebar />
     <main>
       <div id="top">

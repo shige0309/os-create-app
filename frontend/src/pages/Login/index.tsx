@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link} from "react-router-dom";
 import { useAdmin } from "hooks/useAdmin";
 import { AdminType } from "Type";
+import { Head } from "components/Head";
 import "./Login.css";
 
 export const Login = () => {
@@ -58,6 +59,7 @@ export const Login = () => {
 
   return (
     <>
+      <Head title={"LOGIN"} description={"LOGIN"}/>
       <main>
         <div className="login">
           <MainVisual image={"top-main.jpg"}/>

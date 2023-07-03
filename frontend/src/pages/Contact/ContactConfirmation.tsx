@@ -10,6 +10,7 @@ import { useAppSelector } from "stores/hooks";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useContact } from "hooks/useContact";
+import { Head } from "components/Head";
 import "./Contact.css";
 
 export const ContactConfirmationPage = () => {
@@ -31,6 +32,7 @@ export const ContactConfirmationPage = () => {
 
   return (
     <>
+      <Head title={"お問い合わせ確認"} description={"お問い合わせ確認"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

@@ -15,6 +15,7 @@ import { stateToHTML } from "draft-js-export-html";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "stores/hooks";
 import parse from "html-react-parser";
+import { Head } from "components/Head";
 import "./Blog.css";
 
 export const BlogPage = () => {
@@ -46,6 +47,7 @@ export const BlogPage = () => {
   }, []);
   return (
     <>
+      <Head title={blog ? blog.title : null} description={blog ? blog.title : null}/>
       <Sidebar />
       <main>
           <MainVisual image={"blog/mv.jpg"}/>

@@ -9,6 +9,7 @@ import { SubPageTitle } from "components/SubPageTitle"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { deleteContact } from "stores/slice/contactSlice"
+import { Head } from "components/Head"
 
 export const ContactThanksPage = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export const ContactThanksPage = () => {
   }, [])
   return (
     <>
+      <Head title={"お問い合わせサンクス"} description={"お問い合わせサンクス"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

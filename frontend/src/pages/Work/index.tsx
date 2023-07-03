@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import { useWork } from "hooks/useWork";
 import { GetWorkType } from "Type";
 import { AxiosResponse } from "axios";
+import { Head } from "components/Head";
 import "./Work.css";
 
 export const WorkPage = () => {
@@ -34,6 +35,7 @@ export const WorkPage = () => {
   }, [])
   return (
     <>
+      <Head title={work ? work.title : null} description={work ? work.title : null}/>
       <Sidebar />
       <main>
         <MainVisual image={"work/mv.jpg"}/>
