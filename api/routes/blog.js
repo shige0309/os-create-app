@@ -5,8 +5,8 @@ const verifyToken = require('../middleware/verifyToken');
 router.post("/register", async (req,res) => {
     const newBlog = new Blog(req.body);
     try {
-        const blog = await newBlog.save();
-        return res.status(200).json(blog);
+       await newBlog.save();
+        return res.status(200).json("BLOGを作成しました。");
     } catch (error) {
         return res.status(500).json(error);
     }

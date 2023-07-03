@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
         });
 
         const admin = await newAdmin.save();
-        return res.status(200).json(admin);
+        return res.status(200).json("登録しました！");
     } catch (error) {
         return res.status(500).json(error);
     }

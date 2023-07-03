@@ -42,7 +42,7 @@ router.post("/", upload.single("file"), async (req, res) => {
 
     try {
         const data = await s3.send(new PutObjectCommand(uploadParams));
-        res.status(200).json(data);
+        res.status(200).json("ファイルをアップロードしました。");
     } catch (error) {
         res.status(500).json(`画像の登録に失敗しました。${error}`);
     }
