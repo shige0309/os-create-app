@@ -11,8 +11,8 @@ import { useAdmin } from "hooks/useAdmin"
 import { AxiosResponse } from "axios"
 import { AdminType } from "Type"
 import { Alert } from "components/Alert"
-import "./AdminUpdate.css"
 import { Head } from "components/Head"
+import "./AdminUpdate.css"
 
 export const AdminUpdate = () => {
   const {getRegisterAdmin, updateAdmin} = useAdmin();
