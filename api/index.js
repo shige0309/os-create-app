@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URL);
 //ミドルウェア
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use(cors({
-    origin: ["https://os-create.com/"],
+    origin: ["https://os-create.com/", "https://www.os-create.com/"],
     credentials: false,
     methods: ["POST", "GET", "PUT"],
 }));
