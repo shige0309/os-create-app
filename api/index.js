@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URL);
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use(cors({ 
     origin: [process.env.ORIGIN_URL, process.env.ORIGIN_WWW_URL],
-    credentials: true,
+    credentials: false,
     methods: ["POST", "GET", "PUT"],
 }));
 app.use(express.json());
