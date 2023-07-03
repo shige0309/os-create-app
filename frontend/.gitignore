@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .env
+tsconfig.json
 
 # testing
 /coverage
@@ -22,5 +23,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-tsconfig.json
