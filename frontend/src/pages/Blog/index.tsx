@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { useAppSelector } from "stores/hooks";
 import parse from "html-react-parser";
 import "./Blog.css";
+import { Head } from "components/Head";
 
 export const BlogPage = () => {
   const {admin} = useAppSelector((state) => state);
@@ -25,6 +26,7 @@ export const BlogPage = () => {
   const PUBLIC_FOLDER = process.env.REACT_APP_S3_OBJ_URL;
 
   useEffect(() => {
+    
     window.scrollTo(0,0);
 
     const getBlog = async () => {
@@ -44,8 +46,10 @@ export const BlogPage = () => {
 
     getBlog();
   }, []);
+
   return (
     <>
+      <Head title={blog ? blog.title : null} description={blog ? blog.title : null}/>
       <Sidebar />
       <main>
           <MainVisual image={"blog/mv.jpg"}/>

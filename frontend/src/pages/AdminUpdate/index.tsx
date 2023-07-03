@@ -12,6 +12,7 @@ import { AxiosResponse } from "axios"
 import { AdminType } from "Type"
 import { Alert } from "components/Alert"
 import "./AdminUpdate.css"
+import { Head } from "components/Head"
 
 export const AdminUpdate = () => {
   const {getRegisterAdmin, updateAdmin} = useAdmin();
@@ -82,6 +83,7 @@ export const AdminUpdate = () => {
 
   return (
     <>
+      <Head title={"管理者情報更新"} description={"管理者情報更新"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

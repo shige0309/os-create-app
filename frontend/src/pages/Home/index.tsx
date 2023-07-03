@@ -7,10 +7,12 @@ import { HomeWork } from "./Components/HomeWork";
 import { HomeBlog } from "./Components/HomeBlog";
 import { Sidebar } from "components/Sidebar/Front";
 import { Footer } from "components/Footer";
+import { Head } from "components/Head";
 
 export const HomePage = () => {
   return (
     <>
+    <Head title={null} description={null}/>
     <Sidebar />
     <main>
       <div id="top">

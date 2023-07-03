@@ -4,11 +4,12 @@ import { SubContent } from "components/SubContent";
 import { SubPageTitle } from "components/SubPageTitle";
 import { Button } from "components/Button"
 import { Footer } from "./Components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
 import { useAdmin } from "hooks/useAdmin";
 import { AdminType } from "Type";
 import "./Login.css";
+import { Head } from "components/Head";
 
 export const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -58,6 +59,7 @@ export const Login = () => {
 
   return (
     <>
+      <Head title={"LOGIN"} description={"LOGIN"}/>
       <main>
         <div className="login">
           <MainVisual image={"top-main.jpg"}/>

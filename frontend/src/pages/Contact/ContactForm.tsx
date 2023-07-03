@@ -12,11 +12,14 @@ import { InputFormType } from "Type";
 import { setContact } from "stores/slice/contactSlice";
 import { useNavigate } from "react-router-dom";
 import "./Contact.css";
+import { useEffect } from "react";
+import { Head } from "components/Head";
 
 export const ContactFormPage = () => {
   const { contact } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
   const {register, handleSubmit, formState: {errors}} = useForm<InputFormType>({
     defaultValues: {
       name: contact.name,
@@ -32,6 +35,7 @@ export const ContactFormPage = () => {
 
   return (
     <>
+      <Head title={"お問い合わせ"} description={"お問い合わせ"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>

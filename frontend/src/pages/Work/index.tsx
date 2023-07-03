@@ -10,7 +10,9 @@ import { useParams } from "react-router-dom";
 import { useWork } from "hooks/useWork";
 import { GetWorkType } from "Type";
 import { AxiosResponse } from "axios";
+import { Helmet } from 'react-helmet-async';
 import "./Work.css";
+import { Head } from "components/Head";
 
 export const WorkPage = () => {
   const { getDetailWork } = useWork();
@@ -32,8 +34,10 @@ export const WorkPage = () => {
     fetchWork();
 
   }, [])
+
   return (
     <>
+      <Head title={work ? work.title : null} description={work ? work.title : null}/>
       <Sidebar />
       <main>
         <MainVisual image={"work/mv.jpg"}/>

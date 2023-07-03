@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useContact } from "hooks/useContact";
 import "./Contact.css";
+import { Head } from "components/Head";
 
 export const ContactConfirmationPage = () => {
   const { contact } = useAppSelector((state) => state);
@@ -22,7 +23,7 @@ export const ContactConfirmationPage = () => {
     if(contact.name === "" && contact.email === "" && contact.content === "") {
       navigate("/contact");
     }
-  }, [])
+  }, []);
 
   const handleSubmit = async () => {
     await registerContact(contact);
@@ -31,6 +32,7 @@ export const ContactConfirmationPage = () => {
 
   return (
     <>
+      <Head title={"お問い合わせ確認"} description={"お問い合わせ確認"}/>
       <Sidebar />
       <main>
           <MainVisual image={"contact/mv.jpg"}/>
