@@ -8,8 +8,12 @@ import { HomeBlog } from "./Components/HomeBlog";
 import { Sidebar } from "components/Sidebar/Front";
 import { Head } from "components/Head";
 import { Footer } from "components/Footer";
+import { useEffect } from "react";
 
 export const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0,0);
+  },[]);
   return (
     <>
     <Head title={null} description={null}/>
