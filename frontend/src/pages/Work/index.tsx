@@ -33,6 +33,7 @@ export const WorkPage = () => {
     fetchWork();
 
   }, [])
+
   return (
     <>
       <Head title={work ? work.title : null} description={work ? work.title : null}/>
