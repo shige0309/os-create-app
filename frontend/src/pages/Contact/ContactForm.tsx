@@ -13,6 +13,7 @@ import { setContact } from "stores/slice/contactSlice";
 import { useNavigate } from "react-router-dom";
 import { Head } from "components/Head";
 import "./Contact.css";
+import { useEffect } from "react";
 
 export const ContactFormPage = () => {
   const { contact } = useAppSelector((state) => state);
@@ -25,6 +26,10 @@ export const ContactFormPage = () => {
       content: contact.content,
     }
   });
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
 
   const onSubmit = handleSubmit((data: InputFormType) => {
     dispatch(setContact(data));
