@@ -22,8 +22,8 @@ mongoose.connect(process.env.MONGO_URL);
 
 //ミドルウェア
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-app.use(cors({
-    origin: ["https://os-create.com"],
+app.use(cors({ 
+    origin: [process.env.ORIGIN_URL, process.env.ORIGIN_WWW_URL],
     credentials: false,
     methods: ["POST", "GET", "PUT"],
 }));
