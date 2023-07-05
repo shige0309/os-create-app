@@ -11,6 +11,7 @@ import { useWork } from "hooks/useWork";
 import { GetWorkType } from "Type";
 import { AxiosResponse } from "axios";
 import { Head } from "components/Head";
+import { WorkList } from "components/WorkList";
 import "./Work.css";
 
 export const WorkPage = () => {
@@ -32,7 +33,7 @@ export const WorkPage = () => {
 
     fetchWork();
 
-  }, [])
+  }, [id]);
   return (
     <>
       <Head title={work ? work.title : null} description={work ? work.title : null}/>
@@ -47,6 +48,9 @@ export const WorkPage = () => {
           <SubContent>
             {work && <p className="work-detail"><img src={PUBLIC_FOLDER + "work/" + work.descriptionImage} alt="" /></p>}
           </SubContent>
+          <div className="homeSection">
+            <WorkList />
+          </div>
           <Contact />
         </Content>
       </main>
