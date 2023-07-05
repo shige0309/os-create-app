@@ -13,6 +13,7 @@ import { AxiosResponse } from "axios";
 import { Helmet } from 'react-helmet-async';
 import "./Work.css";
 import { Head } from "components/Head";
+import { HomeWork } from "components/HomeWork";
 
 export const WorkPage = () => {
   const { getDetailWork } = useWork();
@@ -33,7 +34,7 @@ export const WorkPage = () => {
 
     fetchWork();
 
-  }, [])
+  }, [id]);
 
   return (
     <>
@@ -49,6 +50,9 @@ export const WorkPage = () => {
           <SubContent>
             {work && <p className="work-detail"><img src={PUBLIC_FOLDER + "work/" + work.descriptionImage} alt="" /></p>}
           </SubContent>
+          <div className="homeSection">
+            <HomeWork />
+          </div>
           <Contact />
         </Content>
       </main>
