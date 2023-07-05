@@ -3,9 +3,9 @@ import { Card } from "components/Card/WorkCard";
 import { useEffect, useState } from "react";
 import { GetWorkType } from "Type";
 import { useWork } from "hooks/useWork";
-import "./HomeWork.css";
+import "./WorkList.css";
 
-export const HomeWork = () => {
+export const WorkList = () => {
   const [works, setWorks] = useState<GetWorkType[]>([]);
   const { getWorks } = useWork();
   
