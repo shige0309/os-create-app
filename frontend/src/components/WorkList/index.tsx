@@ -24,7 +24,7 @@ export const WorkList = () => {
       <SectionTitle en="WORK" title="直近の制作サイト"/>
       <div className="c-homeWork-card">
       {works ? works.map((work : GetWorkType) =>
-        <Card props={work} key={work._id}/>) 
+        <Card props={work} key={work._id}/>)
         : <p>WORKSがありません。</p>}
       </div>
     </section>
