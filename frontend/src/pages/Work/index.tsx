@@ -53,9 +53,12 @@ export const WorkPage = () => {
           </div>
           <SubContent>
             {loading && (
-              <div className="c-homeWork-progress">
-                <CircularProgress size="lg" />
-                <p>ローディング中</p>
+              <div>
+                <div className="work-progress">
+                  <div className="work-progress-circle"><CircularProgress size="lg" /></div>
+                  <p>ローディング中</p>
+                </div>
+                <div className="work-mask"></div>
               </div>
             )}
             {work && (
