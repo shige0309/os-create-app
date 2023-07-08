@@ -1,15 +1,15 @@
 .c-homeWork-card {
-    display: flex;
-    gap: 4rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .c-homeWork-card .c-card {
-    width: calc(50% - 2rem);
+  width: calc(50% - 2rem);
 }
 
-@media screen and (max-width: 576px){
-    .c-homeWork-card .c-card {
-        width: 100%;
-    }
+@media screen and (max-width: 576px) {
+  .c-homeWork-card .c-card {
+    width: 100%;
+  }
 }

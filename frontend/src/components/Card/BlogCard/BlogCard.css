@@ -1,55 +1,54 @@
 .c-blogCard {
-    margin: 0 0 4rem;
-    filter: drop-shadow(0 0 0.3rem rgba(0,0,0,.6));
-    width: 100%;
+  margin: 0 0 4rem;
+  filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.6));
+  width: 100%;
 }
 
 .c-blogCard figure {
-    display: flex;
-    gap: 4rem;
-    padding: 2rem;
-    background-color: #fff;
+  display: flex;
+  gap: 4rem;
+  padding: 2rem;
+  background-color: #fff;
 }
 
 .c-blogCard-img p {
-    width: 31rem;
+  width: 31rem;
 }
 
 .c-blogCard-img figcaption {
-    width: calc(100% - 31rem);
+  width: calc(100% - 31rem);
 }
 
 .c-blogCard-title {
-    margin: 1rem 0;
-    font-size: 2.4rem;
+  margin: 1rem 0;
+  font-size: 2.4rem;
 }
 
 .c-blogCard-text {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5; /* 任意の行数を指定 */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* 任意の行数を指定 */
 }
 
-@media screen and (max-width: 769px){
-    .c-blogCard-title {
-        margin: 1rem 0;
-        font-size: 2.6vw;
-    }
+@media screen and (max-width: 769px) {
+  .c-blogCard-title {
+    margin: 1rem 0;
+    font-size: 2.6vw;
+  }
 }
 
-@media screen and (max-width: 576px){
-    .c-blogCard figure {
-        flex-direction: column;
-    }
+@media screen and (max-width: 576px) {
+  .c-blogCard figure {
+    flex-direction: column;
+  }
 
-    .c-blogCard-img p {
-        width: 100%;
-    }
+  .c-blogCard-img p {
+    width: 100%;
+  }
 
-    .c-blogCard-title {
-        margin: 1rem 0;
-        font-size: 4.6vw;
-    }
-    
+  .c-blogCard-title {
+    margin: 1rem 0;
+    font-size: 4.6vw;
+  }
 }

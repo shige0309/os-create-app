@@ -17,36 +17,45 @@ import "./Work.css";
 export const WorkPage = () => {
   const { getDetailWork } = useWork();
   const id = useParams().id;
-  const [ work, setWork ] = useState<GetWorkType>();
+  const [work, setWork] = useState<GetWorkType>();
   const PUBLIC_FOLDER = process.env.REACT_APP_S3_OBJ_URL;
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    const fetchWork = async () => {
 
-      if(id) {
+    const fetchWork = async () => {
+      if (id) {
         const work: AxiosResponse<GetWorkType> = await getDetailWork(id);
         setWork(work.data);
       }
-    }
+    };
 
     fetchWork();
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   return (
     <>
-      <Head title={work ? work.title : null} description={work ? work.title : null}/>
+      <Head
+        title={work ? work.title : null}
+        description={work ? work.title : null}
+      />
       <Sidebar />
       <main>
-        <MainVisual image={"work/mv.jpg"}/>
+        <MainVisual image={"work/mv.jpg"} />
         <Content>
           <div className="work">
-            <SubPageTitle title={"WORK"} sub={work ? work.tag : ""}/>
+            <SubPageTitle title={"WORK"} sub={work ? work.tag : ""} />
             <h1 className="work-title">{work ? work.title : ""}</h1>
           </div>
           <SubContent>
-            {work && <p className="work-detail"><img src={PUBLIC_FOLDER + "work/" + work.descriptionImage} alt="" /></p>}
+            {work && (
+              <p className="work-detail">
+                <img
+                  src={PUBLIC_FOLDER + "work/" + work.descriptionImage}
+                  alt=""
+                />
+              </p>
+            )}
           </SubContent>
           <div className="homeSection">
             <WorkList />
@@ -56,5 +65,5 @@ export const WorkPage = () => {
       </main>
       <Footer />
     </>
-  )
-}
+  );
+};

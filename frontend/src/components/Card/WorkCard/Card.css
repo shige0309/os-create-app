@@ -1,71 +1,71 @@
 .c-card a {
-    padding: 2rem 2rem 0;
-    height: 395px;
-    background-color: #fff;
-    filter: drop-shadow(0 0 0.3rem rgba(0,0,0,.6));
-    display: block;
+  padding: 2rem 2rem 0;
+  height: 395px;
+  background-color: #fff;
+  filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.6));
+  display: block;
 }
 
 .c-card-img {
-    height: 248px;
+  height: 248px;
 }
 
 .c-card-img img {
-    object-fit: cover;
-    height: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 .c-card-tag {
-    text-align: center;
+  text-align: center;
 }
 
 .c-card-tag span {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .c-card-tag span::before,
 .c-card-tag span::after {
-    content: "";
-    width: 3rem;
-    height: 0.1rem;
-    background-color: #000;
-    display: block;
-    position: absolute;
-    top: 50%;
+  content: "";
+  width: 3rem;
+  height: 0.1rem;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 50%;
 }
 
 .c-card-tag span::before {
-    left: -5rem;
+  left: -5rem;
 }
 
 .c-card-tag span::after {
-    right: -5rem;
+  right: -5rem;
 }
 
 .c-card-name {
-    margin: 1.5rem 0 0;
-    font-size: 2.4rem;
-    font-weight: 700;
-    text-align: center;
+  margin: 1.5rem 0 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .c-card figcaption {
-    padding: 4rem 0;
+  padding: 4rem 0;
 }
 
-@media screen and (max-width: 1024px){
-    .c-card-name {
-        font-size: 2.2vw;
-    }
+@media screen and (max-width: 1024px) {
+  .c-card-name {
+    font-size: 2.2vw;
+  }
 }
 
-@media screen and (max-width: 576px){
-    .c-card-tag {
-        font-size: 3.6vw;
-    }
+@media screen and (max-width: 576px) {
+  .c-card-tag {
+    font-size: 3.6vw;
+  }
 
-    .c-card-name {
-        font-size: 4.8vw;
-    }
+  .c-card-name {
+    font-size: 4.8vw;
+  }
 }

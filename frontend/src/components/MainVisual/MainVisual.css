@@ -1,11 +1,11 @@
 .c-mainVisual-mv {
-    position: fixed;
-    height: 100vh;
-    width: 100%;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
 }
 
 .c-mainVisual-mv img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

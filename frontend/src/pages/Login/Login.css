@@ -1,31 +1,31 @@
 .login {
-    min-height: 100vh;
-    position: relative;
+  min-height: 100vh;
+  position: relative;
 }
 
 .login-wrap {
-    width: 70%;
-    position: absolute;
-    z-index: 13;
-    top: 65%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+  width: 70%;
+  position: absolute;
+  z-index: 13;
+  top: 65%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .login-logo {
-    margin: 0 auto 2rem;
-    max-width: 15rem;
+  margin: 0 auto 2rem;
+  max-width: 15rem;
 }
 
 .login-logo img {
-    width: 100%;
+  width: 100%;
 }
 
 .login-title {
-    margin: 0 0 4rem;
+  margin: 0 0 4rem;
 }
 
 .login-topLink {
-    margin: 2rem 0 0;
-    text-align: center;
+  margin: 2rem 0 0;
+  text-align: center;
 }

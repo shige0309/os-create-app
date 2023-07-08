@@ -1,29 +1,28 @@
 .c-sectionTitle {
-    margin: 0 0 5rem;
-    color: #fff;
-    display: flex;
-    align-items: flex-end;
+  margin: 0 0 5rem;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
 }
 
 .c-sectionTitle h2 {
-    margin: 0 2rem 0 0;
-    font-size: 6.8rem;
-    line-height: 1;
+  margin: 0 2rem 0 0;
+  font-size: 6.8rem;
+  line-height: 1;
 }
 
 .c-sectionTitle p {
-    line-height: 1;
+  line-height: 1;
 }
 
 @media screen and (max-width: 769px) {
-    
-    .c-sectionTitle h2 {
-        font-size: 6vw;
-    }
+  .c-sectionTitle h2 {
+    font-size: 6vw;
+  }
 }
 
-@media screen and (max-width: 576px){
-    .c-sectionTitle h2 {
-        font-size: 10vw;
-    }
+@media screen and (max-width: 576px) {
+  .c-sectionTitle h2 {
+    font-size: 10vw;
+  }
 }

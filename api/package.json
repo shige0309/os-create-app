@@ -4,7 +4,13 @@
   "description": "os-create",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "lint": "run-p -c lint:*",
+    "lint:eslint": "eslint --ext .js .",
+    "lint:prettier": "prettier --check .",
+    "fix": "run-s -c fix:eslint fix:prettier",
+    "fix:eslint": "eslint --ext .js . --fix",
+    "fix:prettier": "prettier --write ."
   },
   "author": "os",
   "license": "ISC",
@@ -15,6 +21,7 @@
     "aws-sdk": "^2.1408.0",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
+    "eslint": "^8.44.0",
     "express": "^4.18.2",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
@@ -24,6 +31,9 @@
     "nodemon": "^2.0.22"
   },
   "devDependencies": {
-    "@types/multer": "^1.4.7"
+    "@types/multer": "^1.4.7",
+    "eslint-config-prettier": "^8.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0"
   }
 }

@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
 
 //データベース接続
 mongoose.connect(process.env.MONGO_URL);
@@ -22,11 +22,13 @@ mongoose.connect(process.env.MONGO_URL);
 
 //ミドルウェア
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-app.use(cors({ 
+app.use(
+  cors({
     origin: [process.env.ORIGIN_URL, process.env.ORIGIN_WWW_URL],
     credentials: false,
     methods: ["POST", "GET", "PUT"],
-}));
+  }),
+);
 app.use(express.json());
 app.use("/api/admin", adminRoute);
 app.use("/api/blog", blogRoute);

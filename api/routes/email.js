@@ -4,23 +4,23 @@ const { SESClient, SendEmailCommand } = require("@aws-sdk/client-ses");
 require("dotenv").config();
 
 const ses = new SESClient({
-    region: process.env.AWS_REGION,
-    credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-    }
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 const createSendEmailCommand = (toAddress, fromAddress, body) => {
-    return new SendEmailCommand({
-        Destination: {
-        ToAddresses: [toAddress],
-        },
-        Message: {
-        Body: {
-            Text: {
-            Charset: "UTF-8",
-            Data: `
+  return new SendEmailCommand({
+    Destination: {
+      ToAddresses: [toAddress],
+    },
+    Message: {
+      Body: {
+        Text: {
+          Charset: "UTF-8",
+          Data: `
             ${body.name}様
             
             この度は【岡田茂之ポートフォリオサイト】からのお問い合わせありがとうございます。
@@ -39,35 +39,34 @@ const createSendEmailCommand = (toAddress, fromAddress, body) => {
             ○●-----------------------●○
 
             Webエンジニア
-            岡田　茂之
+            岡田 茂之
             okada shigeyuki
 
             info_os-create@os-create.com
 
             ○●-----------------------●○
             `,
-            },
         },
-        Subject: {
-            Charset: "UTF-8",
-            Data: "【os-create】お問い合わせありがとうございます。",
-        },
-        },
-        Source: fromAddress
-    });
+      },
+      Subject: {
+        Charset: "UTF-8",
+        Data: "【os-create】お問い合わせありがとうございます。",
+      },
+    },
+    Source: fromAddress,
+  });
 };
 
-
 const createAdminEmailCommand = (toAddress, fromAddress, body) => {
-    return new SendEmailCommand({
-        Destination: {
-        ToAddresses: [toAddress],
-        },
-        Message: {
-        Body: {
-            Text: {
-            Charset: "UTF-8",
-            Data: `
+  return new SendEmailCommand({
+    Destination: {
+      ToAddresses: [toAddress],
+    },
+    Message: {
+      Body: {
+        Text: {
+          Charset: "UTF-8",
+          Data: `
             ${body.name}様から以下、お問い合わせがありました。
 
             この度は【岡田茂之ポートフォリオサイト】からのお問い合わせありがとうございます。
@@ -86,37 +85,44 @@ const createAdminEmailCommand = (toAddress, fromAddress, body) => {
             ○●-----------------------●○
 
             Webエンジニア
-            岡田　茂之
+            岡田 茂之
             okada shigeyuki
 
             info_os-create@os-create.com
 
             ○●-----------------------●○
             `,
-            },
         },
-        Subject: {
-            Charset: "UTF-8",
-            Data: "【os-create】お問い合わせありがとうございます。",
-        },
-        },
-        Source: fromAddress
-    });
+      },
+      Subject: {
+        Charset: "UTF-8",
+        Data: "【os-create】お問い合わせありがとうございます。",
+      },
+    },
+    Source: fromAddress,
+  });
 };
 
 router.post("/send", async (req, res) => {
-    const sendUserEmailCommand = createSendEmailCommand(req.body.email, process.env.EMAIL_FROM, req.body);
-    const sendAdminEmailCommand = createAdminEmailCommand(process.env.EMAIL_FROM, process.env.EMAIL_FROM, req.body);
-    try {
+  const sendUserEmailCommand = createSendEmailCommand(
+    req.body.email,
+    process.env.EMAIL_FROM,
+    req.body,
+  );
+  const sendAdminEmailCommand = createAdminEmailCommand(
+    process.env.EMAIL_FROM,
+    process.env.EMAIL_FROM,
+    req.body,
+  );
+  try {
     await ses.send(sendUserEmailCommand);
     await ses.send(sendAdminEmailCommand);
     const newEmail = new Email(req.body);
     await newEmail.save();
     return res.status(200).json("メールを送信しました。");
-
-    } catch (error) {
+  } catch (error) {
     return res.status(200).json(error);
-    }
+  }
 });
 
 module.exports = router;

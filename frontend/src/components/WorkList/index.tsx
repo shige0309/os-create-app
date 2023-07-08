@@ -8,25 +8,28 @@ import "./WorkList.css";
 export const WorkList = () => {
   const [works, setWorks] = useState<GetWorkType[]>([]);
   const { getWorks } = useWork();
-  
+
   useEffect(() => {
     const fetchWorks = async () => {
       const result = await getWorks();
-      if(result) {
+      if (result) {
         setWorks(result.data);
       }
-    }
+    };
 
     fetchWorks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section>
-      <SectionTitle en="WORK" title="直近の制作サイト"/>
+      <SectionTitle en="WORK" title="直近の制作サイト" />
       <div className="c-homeWork-card">
-      {works ? works.map((work : GetWorkType) =>
-        <Card props={work} key={work._id}/>)
-        : <p>WORKSがありません。</p>}
+        {works ? (
+          works.map((work: GetWorkType) => <Card props={work} key={work._id} />)
+        ) : (
+          <p>WORKSがありません。</p>
+        )}
       </div>
     </section>
-  )
-}
+  );
+};

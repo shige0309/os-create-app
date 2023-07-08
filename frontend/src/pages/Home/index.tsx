@@ -12,35 +12,35 @@ import { WorkList } from "components/WorkList";
 
 export const HomePage = () => {
   useEffect(() => {
-    window.scrollTo(0,0);
-  },[]);
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-    <Head title={null} description={null}/>
-    <Sidebar />
-    <main>
-      <div id="top">
-        <MainVisual image={"top-main.jpg"}/>
-      </div>
-      <Content>
-        <HomeCatch />
-        <div id="profile">
-          <HomeProfile />
+      <Head title={null} description={null} />
+      <Sidebar />
+      <main>
+        <div id="top">
+          <MainVisual image={"top-main.jpg"} />
         </div>
-        <div id="work">
-          <div className="homeSection">
-            <WorkList />
+        <Content>
+          <HomeCatch />
+          <div id="profile">
+            <HomeProfile />
           </div>
-        </div>
-        <div id="blog">
-          <div className="homeSection">
-            <HomeBlog />
+          <div id="work">
+            <div className="homeSection">
+              <WorkList />
+            </div>
           </div>
-        </div>
-        <Contact />
-      </Content>
-    </main>
-    <Footer />
+          <div id="blog">
+            <div className="homeSection">
+              <HomeBlog />
+            </div>
+          </div>
+          <Contact />
+        </Content>
+      </main>
+      <Footer />
     </>
   );
-}
+};
