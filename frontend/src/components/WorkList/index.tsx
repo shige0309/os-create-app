@@ -3,18 +3,22 @@ import { Card } from "components/Card/WorkCard";
 import { useEffect, useState } from "react";
 import { GetWorkType } from "Type";
 import { useWork } from "hooks/useWork";
+import CircularProgress from "@mui/joy/CircularProgress";
 import "./WorkList.css";
 
 export const WorkList = () => {
   const [works, setWorks] = useState<GetWorkType[]>([]);
   const { getWorks } = useWork();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchWorks = async () => {
+      setLoading(true);
       const result = await getWorks();
       if (result) {
         setWorks(result.data);
       }
+      setLoading(false);
     };
 
     fetchWorks();
@@ -23,6 +27,12 @@ export const WorkList = () => {
   return (
     <section>
       <SectionTitle en="WORK" title="直近の制作サイト" />
+      {loading ?? (
+        <div className="c-homeWork-progress">
+          <CircularProgress size="lg" />
+          <p>ローディング中</p>
+        </div>
+      )}
       <div className="c-homeWork-card">
         {works ? (
           works.map((work: GetWorkType) => <Card props={work} key={work._id} />)

@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2024: true,
+    es2020: true,
     node: true,
   },
   extends: [
@@ -24,7 +24,7 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 2020,
     sourceType: "module",
   },
   plugins: ["@typescript-eslint", "react"],

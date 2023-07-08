@@ -12,6 +12,7 @@ import { GetWorkType } from "Type";
 import { AxiosResponse } from "axios";
 import { Head } from "components/Head";
 import { WorkList } from "components/WorkList";
+import CircularProgress from "@mui/joy/CircularProgress";
 import "./Work.css";
 
 export const WorkPage = () => {
@@ -19,14 +20,17 @@ export const WorkPage = () => {
   const id = useParams().id;
   const [work, setWork] = useState<GetWorkType>();
   const PUBLIC_FOLDER = process.env.REACT_APP_S3_OBJ_URL;
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
     const fetchWork = async () => {
       if (id) {
+        setLoading(true);
         const work: AxiosResponse<GetWorkType> = await getDetailWork(id);
         setWork(work.data);
+        setLoading(false);
       }
     };
 
@@ -48,6 +52,12 @@ export const WorkPage = () => {
             <h1 className="work-title">{work ? work.title : ""}</h1>
           </div>
           <SubContent>
+            {loading ?? (
+              <div className="c-homeWork-progress">
+                <CircularProgress size="lg" />
+                <p>ローディング中</p>
+              </div>
+            )}
             {work && (
               <p className="work-detail">
                 <img

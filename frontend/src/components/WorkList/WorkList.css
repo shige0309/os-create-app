@@ -8,6 +8,11 @@
   width: calc(50% - 2rem);
 }
 
+.c-homeWork-progress {
+  text-align: center;
+  color: #fff;
+}
+
 @media screen and (max-width: 576px) {
   .c-homeWork-card .c-card {
     width: 100%;

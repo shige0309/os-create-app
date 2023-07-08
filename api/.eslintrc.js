@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2024: true,
+    es2020: true,
     node: true,
   },
   extends: ["eslint:recommended", "prettier"],
@@ -17,7 +17,7 @@ module.exports = {
     },
   ],
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 2020,
   },
   rules: {
     semi: ["error", "always"], //alwaysデフォルト
