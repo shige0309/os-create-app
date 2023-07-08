@@ -4,14 +4,17 @@ import { useEffect, useState } from "react";
 import { GetBlogType } from "Type";
 import { useBlog } from "hooks/useBlog";
 import { EditorState, convertFromRaw } from "draft-js";
+import CircularProgress from "@mui/joy/CircularProgress";
 import "./HomeBlog.css";
 
 export const HomeBlog = () => {
   const [blogs, setBlogs] = useState<GetBlogType[]>();
   const { getBlogs } = useBlog();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getBlog = async () => {
+      setLoading(true);
       const result = await getBlogs();
 
       let blogData: GetBlogType[];
@@ -35,6 +38,7 @@ export const HomeBlog = () => {
       });
 
       setBlogs(blogData);
+      setLoading(false);
     };
 
     getBlog();
@@ -45,6 +49,12 @@ export const HomeBlog = () => {
   return (
     <section>
       <SectionTitle en="BLOG" title="" />
+      {loading ?? (
+        <div className="c-homeWork-progress">
+          <CircularProgress size="lg" />
+          <p>ローディング中</p>
+        </div>
+      )}
       <div className="c-home-blog">
         {blogs ? (
           blogs.map((blog) => {
