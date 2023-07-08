@@ -52,7 +52,7 @@ export const WorkPage = () => {
             <h1 className="work-title">{work ? work.title : ""}</h1>
           </div>
           <SubContent>
-            {loading ?? (
+            {loading && (
               <div className="c-homeWork-progress">
                 <CircularProgress size="lg" />
                 <p>ローディング中</p>

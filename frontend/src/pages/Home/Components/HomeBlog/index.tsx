@@ -49,7 +49,7 @@ export const HomeBlog = () => {
   return (
     <section>
       <SectionTitle en="BLOG" title="" />
-      {loading ?? (
+      {loading && (
         <div className="c-homeWork-progress">
           <CircularProgress size="lg" />
           <p>ローディング中</p>

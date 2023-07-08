@@ -27,7 +27,7 @@ export const WorkList = () => {
   return (
     <section>
       <SectionTitle en="WORK" title="直近の制作サイト" />
-      {loading ?? (
+      {loading && (
         <div className="c-homeWork-progress">
           <CircularProgress size="lg" />
           <p>ローディング中</p>
