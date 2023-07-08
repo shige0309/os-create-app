@@ -20,8 +20,6 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
-    semi: ["error", "always"], //alwaysデフォルト
-    quotes: ["error", "double"], //doubleデフォルト
     "no-undef": "error",
     "no-var": "error",
   },

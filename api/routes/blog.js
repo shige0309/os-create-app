@@ -38,7 +38,7 @@ router.put("/update/:id", verifyToken, async (req, res) => {
       { _id: blogId, adminId: adminId },
       {
         $set: req.body,
-      },
+      }
     );
 
     if (!blog) {
