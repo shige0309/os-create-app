@@ -29,8 +29,6 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "react"],
   rules: {
-    semi: ["error", "always"], //alwaysデフォルト
-    quotes: ["error", "double"], //doubleデフォルト
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "no-undef": "error",
