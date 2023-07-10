@@ -10,7 +10,7 @@ export const useAdmin = () => {
   const login = async (admin: AdminType) => {
     const response: AxiosResponse = await axios.post(
       REACT_APP_BACKEND_URL + "/admin/login",
-      admin,
+      admin
     );
     const adminId: string = response.data.admin._id;
     dispatch(setAdmin(adminId));
@@ -23,11 +23,12 @@ export const useAdmin = () => {
   const getAdmin = async () => {
     try {
       const response: AxiosResponse = await axios.get(
-        REACT_APP_BACKEND_URL + "/admin",
+        REACT_APP_BACKEND_URL + "/admin"
       );
       const id = response.data._id;
       dispatch(setAdmin(id));
     } catch (error) {
+      console.log("useAdmin login");
       alert(`エラーが発生しました${error}`);
     }
   };
@@ -35,7 +36,7 @@ export const useAdmin = () => {
   const getRegisterAdmin = async (): Promise<AxiosResponse<string, string>> => {
     try {
       const response: AxiosResponse<string, string> = await axios.get(
-        REACT_APP_BACKEND_URL + "/admin",
+        REACT_APP_BACKEND_URL + "/admin"
       );
       return response;
     } catch (error) {
@@ -45,12 +46,12 @@ export const useAdmin = () => {
   };
 
   const updateAdmin = async (
-    updateData: AdminType,
+    updateData: AdminType
   ): Promise<AxiosResponse<string, string>> => {
     try {
       const response: AxiosResponse<string, string> = await axios.put(
         REACT_APP_BACKEND_URL + "/admin/update",
-        updateData,
+        updateData
       );
       return response;
     } catch (error) {
