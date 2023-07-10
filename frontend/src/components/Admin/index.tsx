@@ -21,7 +21,7 @@ export const Admin = () => {
         getAdmin();
       }
     }
-  }, [admin, getAdmin]);
+  }, [admin.id, getAdmin]);
 
   return (
     <BrowserRouter>
