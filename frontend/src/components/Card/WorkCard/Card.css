@@ -1,17 +1,22 @@
 .c-card a {
   padding: 2rem 2rem 0;
-  height: 395px;
+  /* height: 395px; */
   background-color: #fff;
   filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.6));
   display: block;
 }
 
 .c-card-img {
-  height: 248px;
+  position: relative;
+  width: 100%;
+  padding-top: 55%;
 }
 
 .c-card-img img {
-  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
 }
 
