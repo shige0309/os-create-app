@@ -1,11 +1,10 @@
 {
-    "cSpell.words": [
-        "Localstrage"
-    ],
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "eslint.validate": ["javascript"],
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "cSpell.words": ["Localstrage"],
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll.eslint"
+  ],
+  "eslint.validate": ["javascript"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

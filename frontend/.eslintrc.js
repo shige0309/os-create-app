@@ -27,7 +27,13 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react", "simple-import-sort", "import"],
+  plugins: [
+    "@typescript-eslint",
+    "react",
+    "simple-import-sort",
+    "import",
+    "unused-imports",
+  ],
   rules: {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
@@ -38,6 +44,7 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
+    "unused-imports/no-unused-imports": "error",
   },
   settings: {
     react: {
