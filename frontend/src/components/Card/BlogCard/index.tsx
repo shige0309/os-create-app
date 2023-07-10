@@ -1,7 +1,8 @@
-import { FadeInComponent } from "components/FadeInComponent";
-import { GetBlogType } from "Type";
-import { Link } from "react-router-dom";
 import "./BlogCard.css";
+
+import { FadeInComponent } from "components/FadeInComponent";
+import { Link } from "react-router-dom";
+import { GetBlogType } from "Type";
 
 export const BlogCard = ({ props }: { props: GetBlogType }) => {
   const PUBLIC_FOLDER = process.env.REACT_APP_S3_OBJ_URL;

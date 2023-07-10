@@ -1,9 +1,10 @@
+import "./Sidebar.css";
+
+import { useWindowSize } from "hooks/useWindowSize";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Link as Scroll } from "react-scroll";
 import { HashLink } from "react-router-hash-link";
-import { useWindowSize } from "hooks/useWindowSize";
-import "./Sidebar.css";
+import { Link as Scroll } from "react-scroll";
 import { useAppSelector } from "stores/hooks";
 
 export const Sidebar = () => {

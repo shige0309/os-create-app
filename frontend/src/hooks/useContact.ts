@@ -1,5 +1,5 @@
-import { InputFormType } from "Type";
 import axios from "axios";
+import { InputFormType } from "Type";
 
 export const useContact = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

@@ -1,6 +1,7 @@
+import "./Button.css";
+
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Button.css";
 
 type buttonProps = {
   buttonType: "button" | "link";

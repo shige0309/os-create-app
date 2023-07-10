@@ -1,5 +1,5 @@
-import { BlogType, NewImageType, UploadImageData, WorkType } from "Type";
 import axios from "axios";
+import { BlogType, NewImageType, UploadImageData, WorkType } from "Type";
 
 export const useUploadImage = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

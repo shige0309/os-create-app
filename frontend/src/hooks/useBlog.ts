@@ -1,5 +1,5 @@
-import { BlogType, GetBlogType } from "Type";
 import axios, { AxiosResponse } from "axios";
+import { BlogType, GetBlogType } from "Type";
 
 export const useBlog = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

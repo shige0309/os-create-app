@@ -1,7 +1,8 @@
 import "./HomeCatch.css";
-import { useEffect, useRef } from "react";
+
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { useEffect, useRef } from "react";
 
 export const HomeCatch = () => {
   const textRef = useRef<HTMLSpanElement>(null);

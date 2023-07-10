@@ -1,5 +1,5 @@
-import { GetWorkType, WorkType } from "Type";
 import axios, { AxiosResponse } from "axios";
+import { GetWorkType, WorkType } from "Type";
 
 export const useWork = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

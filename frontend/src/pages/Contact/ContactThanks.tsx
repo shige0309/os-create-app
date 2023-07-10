@@ -2,6 +2,7 @@ import { Button } from "components/Button";
 import { Content } from "components/Content";
 import { Footer } from "components/Footer";
 import { FormContainer } from "components/Form/FormContainer";
+import { Head } from "components/Head";
 import { MainVisual } from "components/MainVisual";
 import { Sidebar } from "components/Sidebar/Front";
 import { SubContent } from "components/SubContent";
@@ -9,7 +10,6 @@ import { SubPageTitle } from "components/SubPageTitle";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "stores/slice/contactSlice";
-import { Head } from "components/Head";
 
 export const ContactThanksPage = () => {
   const dispatch = useDispatch();

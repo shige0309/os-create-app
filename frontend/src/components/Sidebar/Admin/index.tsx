@@ -1,7 +1,8 @@
+import "./Sidebar.css";
+
+import { useAdmin } from "hooks/useAdmin";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Sidebar.css";
-import { useAdmin } from "hooks/useAdmin";
 
 export const Sidebar = () => {
   const [url, setUrl] = useState<string>("");

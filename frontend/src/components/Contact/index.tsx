@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import "./Contact.css";
+
 import { FadeInComponent } from "components/FadeInComponent";
+import { Link } from "react-router-dom";
 
 export const Contact = () => {
   return (

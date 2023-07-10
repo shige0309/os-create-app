@@ -1,12 +1,13 @@
 import "App.css";
-import { HomePage } from "pages/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { WorkPage } from "pages/Work";
+
+import { Admin } from "components/Admin";
 import { BlogPage } from "pages/Blog";
+import { ContactConfirmationPage } from "pages/Contact/ContactConfirmation";
 import { ContactFormPage } from "pages/Contact/ContactForm";
 import { ContactThanksPage } from "pages/Contact/ContactThanks";
-import { ContactConfirmationPage } from "pages/Contact/ContactConfirmation";
-import { Admin } from "components/Admin";
+import { HomePage } from "pages/Home";
+import { WorkPage } from "pages/Work";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (

@@ -1,3 +1,5 @@
+import "./TextEditor.css";
+
 import {
   ContentBlock,
   ContentState,
@@ -7,7 +9,6 @@ import {
   RichUtils,
 } from "draft-js";
 import React from "react";
-import "./TextEditor.css";
 
 type TextEditorProps = {
   editorState: EditorState;

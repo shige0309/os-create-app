@@ -1,13 +1,13 @@
-import { useAppSelector } from "stores/hooks";
-import { useEffect } from "react";
 import axios from "axios";
 import { useAdmin } from "hooks/useAdmin";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { WorksRegister } from "pages/Work/WorksRegister";
-import { Login } from "pages/Login";
+import { AdminUpdate } from "pages/AdminUpdate";
 import { BlogRegister } from "pages/Blog/BlogRegister";
 import { BlogUpdate } from "pages/Blog/BlogUpdate";
-import { AdminUpdate } from "pages/AdminUpdate";
+import { Login } from "pages/Login";
+import { WorksRegister } from "pages/Work/WorksRegister";
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useAppSelector } from "stores/hooks";
 
 export const Admin = () => {
   const { admin } = useAppSelector((state) => state);

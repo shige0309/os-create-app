@@ -1,17 +1,18 @@
-import { Sidebar } from "components/Sidebar/Front";
-import { MainVisual } from "components/MainVisual";
-import { Content } from "components/Content";
-import { SubPageTitle } from "components/SubPageTitle";
-import { SubContent } from "components/SubContent";
-import { FormContainer } from "components/Form/FormContainer";
-import { Button } from "components/Button";
-import { Footer } from "components/Footer";
-import { useAppSelector } from "stores/hooks";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { useContact } from "hooks/useContact";
-import { Head } from "components/Head";
 import "./Contact.css";
+
+import { Button } from "components/Button";
+import { Content } from "components/Content";
+import { Footer } from "components/Footer";
+import { FormContainer } from "components/Form/FormContainer";
+import { Head } from "components/Head";
+import { MainVisual } from "components/MainVisual";
+import { Sidebar } from "components/Sidebar/Front";
+import { SubContent } from "components/SubContent";
+import { SubPageTitle } from "components/SubPageTitle";
+import { useContact } from "hooks/useContact";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "stores/hooks";
 
 export const ContactConfirmationPage = () => {
   const { contact } = useAppSelector((state) => state);

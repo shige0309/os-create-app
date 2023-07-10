@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import { FadeInComponent } from "components/FadeInComponent";
-import { GetWorkType } from "Type";
 import "./Card.css";
+
+import { FadeInComponent } from "components/FadeInComponent";
+import { Link } from "react-router-dom";
+import { GetWorkType } from "Type";
 
 export const Card = ({ props }: { props: GetWorkType }) => {
   const PUBLIC_FOLDER = process.env.REACT_APP_S3_OBJ_URL;

@@ -1,4 +1,5 @@
-import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+
 import adminSlice from "./slice/adminSlice";
 import contactSlice from "./slice/contactSlice";
 

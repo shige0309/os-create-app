@@ -1,19 +1,19 @@
-import React from "react";
+import "./AdminUpdate.css";
+
+import { AxiosResponse } from "axios";
+import { Alert } from "components/Alert";
+import { Button } from "components/Button";
 import { Content } from "components/Content";
 import { Footer } from "components/Footer";
+import { FormContainer } from "components/Form/FormContainer";
+import { Head } from "components/Head";
 import { MainVisual } from "components/MainVisual";
 import { Sidebar } from "components/Sidebar/Admin";
 import { SubContent } from "components/SubContent";
 import { SubPageTitle } from "components/SubPageTitle";
-import { Button } from "components/Button";
-import { FormContainer } from "components/Form/FormContainer";
-import { useCallback, useEffect, useState } from "react";
 import { useAdmin } from "hooks/useAdmin";
-import { AxiosResponse } from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 import { AdminType } from "Type";
-import { Alert } from "components/Alert";
-import { Head } from "components/Head";
-import "./AdminUpdate.css";
 
 export const AdminUpdate = () => {
   const { getRegisterAdmin, updateAdmin } = useAdmin();

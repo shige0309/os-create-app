@@ -1,10 +1,11 @@
-import { SectionTitle } from "components/SectionTitle";
+import "./WorkList.css";
+
+import CircularProgress from "@mui/joy/CircularProgress";
 import { Card } from "components/Card/WorkCard";
+import { SectionTitle } from "components/SectionTitle";
+import { useWork } from "hooks/useWork";
 import { useEffect, useState } from "react";
 import { GetWorkType } from "Type";
-import { useWork } from "hooks/useWork";
-import CircularProgress from "@mui/joy/CircularProgress";
-import "./WorkList.css";
 
 export const WorkList = () => {
   const [works, setWorks] = useState<GetWorkType[]>([]);

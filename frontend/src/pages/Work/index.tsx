@@ -1,19 +1,20 @@
+import "./Work.css";
+
+import CircularProgress from "@mui/joy/CircularProgress";
+import { AxiosResponse } from "axios";
 import { Contact } from "components/Contact";
 import { Content } from "components/Content";
 import { Footer } from "components/Footer";
+import { Head } from "components/Head";
 import { MainVisual } from "components/MainVisual";
 import { Sidebar } from "components/Sidebar/Front";
 import { SubContent } from "components/SubContent";
 import { SubPageTitle } from "components/SubPageTitle";
+import { WorkList } from "components/WorkList";
+import { useWork } from "hooks/useWork";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useWork } from "hooks/useWork";
 import { GetWorkType } from "Type";
-import { AxiosResponse } from "axios";
-import { Head } from "components/Head";
-import { WorkList } from "components/WorkList";
-import CircularProgress from "@mui/joy/CircularProgress";
-import "./Work.css";
 
 export const WorkPage = () => {
   const { getDetailWork } = useWork();
@@ -55,7 +56,9 @@ export const WorkPage = () => {
             {loading && (
               <div>
                 <div className="work-progress">
-                  <div className="work-progress-circle"><CircularProgress size="lg" /></div>
+                  <div className="work-progress-circle">
+                    <CircularProgress size="lg" />
+                  </div>
                   <p>ローディング中</p>
                 </div>
                 <div className="work-mask"></div>

@@ -1,22 +1,22 @@
-import { Sidebar } from "components/Sidebar/Front";
-import { MainVisual } from "components/MainVisual";
-import { Content } from "components/Content";
-import { SubPageTitle } from "components/SubPageTitle";
-import { SubContent } from "components/SubContent";
-import { Contact } from "components/Contact";
-import { Footer } from "components/Footer";
-import { useEffect, useState } from "react";
-import { useBlog } from "hooks/useBlog";
-import { GetBlogType } from "Type";
-import { useParams } from "react-router-dom";
-import { AxiosResponse } from "axios";
-import { EditorState, convertFromRaw } from "draft-js";
-import { stateToHTML } from "draft-js-export-html";
-import { Link } from "react-router-dom";
-import { useAppSelector } from "stores/hooks";
-import parse from "html-react-parser";
-import { Head } from "components/Head";
 import "./Blog.css";
+
+import { AxiosResponse } from "axios";
+import { Contact } from "components/Contact";
+import { Content } from "components/Content";
+import { Footer } from "components/Footer";
+import { Head } from "components/Head";
+import { MainVisual } from "components/MainVisual";
+import { Sidebar } from "components/Sidebar/Front";
+import { SubContent } from "components/SubContent";
+import { SubPageTitle } from "components/SubPageTitle";
+import { convertFromRaw, EditorState } from "draft-js";
+import { stateToHTML } from "draft-js-export-html";
+import { useBlog } from "hooks/useBlog";
+import parse from "html-react-parser";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useAppSelector } from "stores/hooks";
+import { GetBlogType } from "Type";
 
 export const BlogPage = () => {
   const { admin } = useAppSelector((state) => state);

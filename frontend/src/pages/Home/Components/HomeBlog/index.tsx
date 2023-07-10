@@ -1,11 +1,12 @@
-import { SectionTitle } from "components/SectionTitle";
+import "./HomeBlog.css";
+
+import CircularProgress from "@mui/joy/CircularProgress";
 import { BlogCard } from "components/Card/BlogCard";
+import { SectionTitle } from "components/SectionTitle";
+import { convertFromRaw, EditorState } from "draft-js";
+import { useBlog } from "hooks/useBlog";
 import { useEffect, useState } from "react";
 import { GetBlogType } from "Type";
-import { useBlog } from "hooks/useBlog";
-import { EditorState, convertFromRaw } from "draft-js";
-import CircularProgress from "@mui/joy/CircularProgress";
-import "./HomeBlog.css";
 
 export const HomeBlog = () => {
   const [blogs, setBlogs] = useState<GetBlogType[]>();

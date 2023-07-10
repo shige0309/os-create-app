@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export const FadeInComponent = ({ children }: { children?: ReactNode }) => {
