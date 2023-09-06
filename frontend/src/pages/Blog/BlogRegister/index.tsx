@@ -29,13 +29,13 @@ export const BlogRegister = () => {
   const thumbnailInputRef = useRef<HTMLInputElement>(null);
   const descriptionImageInputRef = useRef<HTMLInputElement>(null);
   const [editorState, setEditorState] = useState<EditorState>(
-    EditorState.createEmpty(linkDecorator),
+    EditorState.createEmpty(linkDecorator)
   );
   const { prepareAndUploadImages } = useUploadImage();
   const { registerBlog } = useBlog();
   const [thumbnailURL, setThumbnailURL] = useState<string | null>(null);
   const [descriptionImageURL, setDescriptionImageURL] = useState<string | null>(
-    null,
+    null
   );
   // const [ file ]
 
@@ -69,7 +69,7 @@ export const BlogRegister = () => {
           thumbnail,
           descriptionImage,
           blogData,
-          newBlog,
+          newBlog
         ) as BlogType;
       }
 
@@ -87,13 +87,13 @@ export const BlogRegister = () => {
       setTitle("");
       setTitleCheck("");
     } catch (error) {
-      alert(`エラーが発生しました。${error}`);
+      alert(`BlogRegisterでエラーが発生しました。${error}`);
     }
   };
 
   const operationFile = (
     e: React.ChangeEvent<HTMLInputElement>,
-    target: "Thumbnail" | "DescriptionImage",
+    target: "Thumbnail" | "DescriptionImage"
   ) => {
     if (e.target.files) {
       switch (target) {

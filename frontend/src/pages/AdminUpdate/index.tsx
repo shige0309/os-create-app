@@ -73,7 +73,7 @@ export const AdminUpdate = () => {
 
       setIsAlertVisible(true);
     } catch (error) {
-      alert(`エラーが発生しました${error}`);
+      alert(`AdminUpdateでエラーが発生しました${error}`);
     }
   };
 

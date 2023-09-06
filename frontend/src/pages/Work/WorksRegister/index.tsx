@@ -76,7 +76,7 @@ export const WorksRegister = () => {
           thumbnail,
           descriptionImage,
           workData,
-          newWork,
+          newWork
         ) as WorkType;
       }
 
@@ -96,13 +96,13 @@ export const WorksRegister = () => {
       setTagCheck("");
       setTitleCheck("");
     } catch (error) {
-      alert(`エラーが発生しました。${error}`);
+      alert(`WorksRegisterでエラーが発生しました。${error}`);
     }
   };
 
   const operationFile = (
     e: React.ChangeEvent<HTMLInputElement>,
-    target: "Thumbnail" | "DescriptionImage",
+    target: "Thumbnail" | "DescriptionImage"
   ) => {
     if (e.target.files) {
       switch (target) {
