@@ -28,7 +28,6 @@ export const useAdmin = () => {
       const id = response.data._id;
       dispatch(setAdmin(id));
     } catch (error) {
-      console.log("useAdmin login");
       alert(`getAdminでエラーが発生しました${error}`);
     }
   };
