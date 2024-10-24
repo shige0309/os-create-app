@@ -20,15 +20,15 @@ export const HomeProfile = () => {
                   <p className="c-homeProfile-card-nameJp">岡田 茂之</p>
                   <p className="c-homeProfile-card-nameEn">Shigeyuki Okada</p>
                   <p className="c-homeProfile-card-nameText">
-                    デザインも可能ですが、最近ではコーディング（Javascript）が面白く、毎日のようにReactやNode.js、Firebaseを活用したサイト制作が趣味になっています。
+                    デザインも可能ですが、最近ではコーディングが面白く、毎日のようにReact.js、Next.js、Node.js、Supabaseを活用したサイト制作を中心に行っております。
                     <br />
                     <br />
-                    年齢を問題にする方もいらっしゃいますが、私は年齢は関係ないと考えています。この業界は絶えず学び、新しい挑戦が求められます。それを否定すれば、この業界で生き抜くことは難しいと私は感じています。そして、辛く感じながら学ぶよりも、楽しみながら学んだ方が成長すると思います。そのため、私はいつも楽しみながら学んでいます。
+                    年齢を問題にする方もいらっしゃいますが、私は年齢は関係ないと考えています。この業界は絶えず学び、新しい挑戦が求められます。それを否定すれば、この業界で生き抜くのは難しいと感じています。また、辛く学ぶよりも楽しみながら学ぶほうが成長すると考えており、私自身も常に楽しみながら学んでいます。
                     <br />
                     <br />
-                    このポートフォリオサイトはMongoDB・Express・React.js・Node.js、画像はAmazon
+                    このポートフォリオサイトは、MongoDB、Express、React.js、Node.jsを使用し、画像はAmazon
                     S3、EメールサービスはAmazon
-                    SESで構築し、Vercelにデプロイしています。
+                    SESで構築しています。デプロイはVercelを利用しています。
                   </p>
                 </figcaption>
               </figure>
@@ -47,26 +47,30 @@ export const HomeProfile = () => {
                   <dl className="c-homeProfile-card-block-def">
                     <dt>言語</dt>
                     <dd>
-                      HTML5・CSS3・SCSS・Javascript
+                      HTML5:10年以上 / CSS3:10年以上 / SCSS:7年 / Javascript:7年
                       <br />
-                      ・React.js・Node.js・Mysql
+                      ・React.js:1年6ヶ月 / Node.js:1年6ヶ月 / Mysql:7年
                     </dd>
                   </dl>
                   <dl className="c-homeProfile-card-block-def">
                     <dt>CMS</dt>
-                    <dd>Wordpress</dd>
+                    <dd>Wordpress:7年</dd>
                   </dl>
                   <dl className="c-homeProfile-card-block-def">
                     <dt>フレームワーク</dt>
-                    <dd>Laravel</dd>
+                    <dd>Next.js:1年6ヶ月</dd>
                   </dl>
                   <dl className="c-homeProfile-card-block-def">
                     <dt>デザインツール</dt>
-                    <dd>Photoshop・Illustrator・AdobeXD</dd>
+                    <dd>
+                      Photoshop:10年以上 / Illustrator:10年以上 / AdobeXD:5年
+                    </dd>
                   </dl>
                   <dl className="c-homeProfile-card-block-def">
                     <dt>その他</dt>
-                    <dd>Git・Gulp、上級ウェブ解析士</dd>
+                    <dd>
+                      Git:5年 / Gulp:5年 / Supabase:1年6ヶ月 / 上級ウェブ解析士
+                    </dd>
                   </dl>
                 </figcaption>
               </figure>
