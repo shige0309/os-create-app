@@ -17,7 +17,7 @@ export const HomeProfile = () => {
                   <h2 className="c-homeProfile-card-title">PROFILE</h2>
                 </div>
                 <figcaption>
-                  <p className="c-homeProfile-card-nameJp">岡田 茂之</p>
+                  <p className="c-homeProfile-card-nameJp">O.S</p>
                   <p className="c-homeProfile-card-nameEn">Shigeyuki Okada</p>
                   <p className="c-homeProfile-card-nameText">
                     デザインも可能ですが、最近ではコーディングが面白く、毎日のようにReact.js、Next.js、Node.js、Supabaseを活用したサイト制作を中心に行っております。
