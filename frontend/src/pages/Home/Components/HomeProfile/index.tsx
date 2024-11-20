@@ -48,8 +48,7 @@ export const HomeProfile = () => {
                     <dt>言語</dt>
                     <dd>
                       HTML5:10年以上 / CSS3:10年以上 / SCSS:7年 / Javascript:7年
-                      / MySQL:5年 / React.js:1年6ヶ月 / Node.js:1年6ヶ月 /
-                      TypeScript:1年6ヶ月
+                      / MySQL:5年 / React.js:1年6ヶ月 / TypeScript:1年6ヶ月
                     </dd>
                   </dl>
                   <dl className="c-homeProfile-card-block-def">
