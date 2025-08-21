@@ -16,6 +16,7 @@ export const Head = (props: props) => {
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={desc} />
+      <meta name="robots" content="noindex, nofollow" />
     </Helmet>
   );
 };
