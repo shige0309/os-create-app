@@ -15,6 +15,8 @@ export const Card = ({ props }: { props: GetWorkType }) => {
               <img
                 src={PUBLIC_FOLDER + "work/" + props.thumbnail}
                 alt={props.title}
+                loading="lazy"
+                decoding="async"
               />
             </p>
             <figcaption>

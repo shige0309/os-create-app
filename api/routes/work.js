@@ -14,6 +14,31 @@ router.post("/register", async (req, res) => {
 
 router.get("/get", async (req, res) => {
   try {
+    const hasPaginationQuery = req.query.page || req.query.limit;
+
+    if (hasPaginationQuery) {
+      const page = Math.max(Number(req.query.page) || 1, 1);
+      const limit = Math.min(Math.max(Number(req.query.limit) || 6, 1), 12);
+      const skip = (page - 1) * limit;
+      const query = Work.find()
+        .sort({ createdAt: -1, _id: -1 })
+        .skip(skip)
+        .limit(limit)
+        .select(
+          "adminId tag title thumbnail descriptionImage createdAt updatedAt",
+        )
+        .lean();
+      const [works, total] = await Promise.all([query, Work.countDocuments()]);
+
+      return res.status(200).json({
+        works,
+        page,
+        limit,
+        total,
+        hasMore: skip + works.length < total,
+      });
+    }
+
     const works = await Work.find();
     return res.status(200).json(works);
   } catch (error) {

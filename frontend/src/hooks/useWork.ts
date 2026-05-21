@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { GetWorkType, WorkType } from "Type";
+import { GetWorksPageType, GetWorkType, WorkType } from "Type";
 
 export const useWork = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -16,6 +16,30 @@ export const useWork = () => {
     try {
       const response: AxiosResponse<GetWorkType[]> = await axios.get(
         REACT_APP_BACKEND_URL + "/work/get",
+      );
+      return response;
+    } catch (error) {
+      alert(`取得に失敗しました。${error}`);
+      throw error;
+    }
+  };
+
+  const getWorksPage = async ({
+    page,
+    limit,
+  }: {
+    page: number;
+    limit: number;
+  }): Promise<AxiosResponse<GetWorksPageType>> => {
+    try {
+      const response: AxiosResponse<GetWorksPageType> = await axios.get(
+        REACT_APP_BACKEND_URL + "/work/get",
+        {
+          params: {
+            page,
+            limit,
+          },
+        },
       );
       return response;
     } catch (error) {
@@ -50,5 +74,5 @@ export const useWork = () => {
     }
   };
 
-  return { registerWork, getWorks, getDetailWork, updateWork };
+  return { registerWork, getWorks, getWorksPage, getDetailWork, updateWork };
 };

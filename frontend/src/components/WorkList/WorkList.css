@@ -13,6 +13,10 @@
   color: #fff;
 }
 
+.c-homeWork-sentinel {
+  height: 1px;
+}
+
 @media screen and (max-width: 576px) {
   .c-homeWork-card .c-card {
     width: 100%;

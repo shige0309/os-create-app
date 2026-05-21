@@ -56,6 +56,14 @@ export type GetWorkType = {
   updatedAt: string;
 };
 
+export type GetWorksPageType = {
+  works: GetWorkType[];
+  page: number;
+  limit: number;
+  total: number;
+  hasMore: boolean;
+};
+
 export type InputFormType = {
   name: string;
   email: string;
