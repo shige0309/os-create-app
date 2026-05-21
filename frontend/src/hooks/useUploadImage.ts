@@ -58,8 +58,6 @@ export const useUploadImage = () => {
 
     await Promise.all(
       uploadImages.map(async ([type, image]) => {
-        const data = new FormData();
-
         let fileName;
         if (type === "thumbnail") {
           fileName = nowDate + "-thumbnail-" + image.name;
@@ -69,12 +67,22 @@ export const useUploadImage = () => {
           fileName = nowDate + image.name;
         }
 
-        data.append("name", fileName);
-        data.append("file", image);
-        data.append("folder", folder);
-
         try {
-          await axios.post(REACT_APP_BACKEND_URL + "/imageUpload", data);
+          const response = await axios.post(
+            REACT_APP_BACKEND_URL + "/imageUpload/presigned",
+            {
+              name: fileName,
+              folder,
+              contentType: image.type,
+              fileSize: image.size,
+            },
+          );
+
+          await axios.put(response.data.uploadUrl, image, {
+            headers: {
+              "Content-Type": image.type,
+            },
+          });
         } catch (error) {
           throw new Error(`画像のアップロードに失敗しました。${error}`);
         }
