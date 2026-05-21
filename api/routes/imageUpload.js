@@ -63,6 +63,7 @@ const getPresignedUrl = async ({ key, contentType }) => {
     headers: {
       host: hostname,
       "content-type": contentType,
+      "x-amz-content-sha256": "UNSIGNED-PAYLOAD",
     },
   });
 

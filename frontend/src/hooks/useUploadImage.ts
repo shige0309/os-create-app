@@ -3,6 +3,40 @@ import { BlogType, NewImageType, UploadImageData, WorkType } from "Type";
 
 const MAX_IMAGE_FILE_SIZE_MB = 5;
 const MAX_IMAGE_FILE_SIZE = MAX_IMAGE_FILE_SIZE_MB * 1024 * 1024;
+const IMAGE_CONTENT_TYPES_BY_EXTENSION: Record<string, string> = {
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  png: "image/png",
+  svg: "image/svg+xml",
+};
+
+const getImageContentType = (image: File): string => {
+  if (image.type) {
+    return image.type;
+  }
+
+  const extension = image.name.split(".").pop()?.toLowerCase();
+
+  return extension ? IMAGE_CONTENT_TYPES_BY_EXTENSION[extension] || "" : "";
+};
+
+const getUploadErrorMessage = (error: unknown): string => {
+  if (axios.isAxiosError(error)) {
+    const responseData = error.response?.data;
+
+    if (typeof responseData === "string") {
+      return responseData;
+    }
+
+    if (responseData) {
+      return JSON.stringify(responseData);
+    }
+
+    return error.message;
+  }
+
+  return error instanceof Error ? error.message : String(error);
+};
 
 export const useUploadImage = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -67,24 +101,28 @@ export const useUploadImage = () => {
           fileName = nowDate + image.name;
         }
 
+        const contentType = getImageContentType(image);
+
         try {
           const response = await axios.post(
             REACT_APP_BACKEND_URL + "/imageUpload/presigned",
             {
               name: fileName,
               folder,
-              contentType: image.type,
+              contentType,
               fileSize: image.size,
             },
           );
 
           await axios.put(response.data.uploadUrl, image, {
             headers: {
-              "Content-Type": image.type,
+              "Content-Type": contentType,
             },
           });
         } catch (error) {
-          throw new Error(`画像のアップロードに失敗しました。${error}`);
+          throw new Error(
+            `画像のアップロードに失敗しました。${getUploadErrorMessage(error)}`,
+          );
         }
       }),
     );
