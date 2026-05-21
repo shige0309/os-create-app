@@ -1,0 +1,43 @@
+.c-works-edit-list {
+  margin: 0 0 4rem;
+}
+
+.works-edit-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.works-edit-list-item {
+  display: grid;
+  grid-template-columns: 12rem 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.works-edit-list-image img {
+  width: 100%;
+}
+
+.works-edit-list-tag {
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.works-edit-list-title {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.works-edit-list-link {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+  .works-edit-list-item {
+    grid-template-columns: 1fr;
+  }
+}

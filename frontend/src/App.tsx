@@ -12,6 +12,7 @@ import { ContactThanksPage } from "pages/Contact/ContactThanks";
 import { HomePage } from "pages/Home";
 import { Login } from "pages/Login";
 import { WorkPage } from "pages/Work";
+import { WorksEditList } from "pages/Work/WorksEditList";
 import { WorksRegister } from "pages/Work/WorksRegister";
 import { WorksUpdate } from "pages/Work/WorksUpdate";
 import { useEffect } from "react";
@@ -51,6 +52,10 @@ function App() {
           <Route
             path="/works/register"
             element={admin.id ? <WorksRegister /> : <Login />}
+          />
+          <Route
+            path="/works/edit"
+            element={admin.id ? <WorksEditList /> : <Login />}
           />
           <Route
             path="/works/update/:id"

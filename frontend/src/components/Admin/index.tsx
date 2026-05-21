@@ -4,6 +4,7 @@ import { AdminUpdate } from "pages/AdminUpdate";
 import { BlogRegister } from "pages/Blog/BlogRegister";
 import { BlogUpdate } from "pages/Blog/BlogUpdate";
 import { Login } from "pages/Login";
+import { WorksEditList } from "pages/Work/WorksEditList";
 import { WorksRegister } from "pages/Work/WorksRegister";
 import { WorksUpdate } from "pages/Work/WorksUpdate";
 import { useEffect } from "react";
@@ -34,6 +35,10 @@ export const Admin = () => {
         <Route
           path="/works/register"
           element={admin.id ? <WorksRegister /> : <Login />}
+        />
+        <Route
+          path="/works/edit"
+          element={admin.id ? <WorksEditList /> : <Login />}
         />
         <Route
           path="/works/update/:id"

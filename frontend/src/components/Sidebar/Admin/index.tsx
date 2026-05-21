@@ -45,6 +45,9 @@ export const Sidebar = () => {
                   <Link to="/works/register">WORKS登録</Link>
                 </li>
                 <li className="c-sidebar-list-item">
+                  <Link to="/works/edit">WORKS編集</Link>
+                </li>
+                <li className="c-sidebar-list-item">
                   <Link to="/blog/register">BLOG登録</Link>
                 </li>
                 <li className="c-sidebar-list-item">
