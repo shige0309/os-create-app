@@ -51,7 +51,11 @@ export const WorksEditList = () => {
             <div className="works-edit-list">
               {works.length > 0 ? (
                 works.map((work) => (
-                  <div className="works-edit-list-item" key={work._id}>
+                  <Link
+                    className="works-edit-list-item"
+                    key={work._id}
+                    to={`/works/update/${work._id}`}
+                  >
                     <p className="works-edit-list-image">
                       <img
                         src={PUBLIC_FOLDER + "work/" + work.thumbnail}
@@ -62,13 +66,8 @@ export const WorksEditList = () => {
                       <p className="works-edit-list-tag">{work.tag}</p>
                       <p className="works-edit-list-title">{work.title}</p>
                     </div>
-                    <Link
-                      className="works-edit-list-link"
-                      to={`/works/update/${work._id}`}
-                    >
-                      編集する
-                    </Link>
-                  </div>
+                    <span className="works-edit-list-link">編集する</span>
+                  </Link>
                 ))
               ) : (
                 <p>WORKSがありません。</p>
