@@ -16,7 +16,7 @@ const storage = multer.memoryStorage();
 const upload = multer({
   storage,
   limits: {
-    fileSize: 2 * 1024 * 1024, //2MB
+    fileSize: 5 * 1024 * 1024, // 5MB
   },
   fileFilter(req, file, callback) {
     if (
@@ -31,24 +31,36 @@ const upload = multer({
   },
 });
 
-router.post("/", upload.single("file"), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send("ファイルがありません。");
-  }
+const uploadSingleImage = upload.single("file");
 
-  const uploadParams = {
-    Bucket: process.env.AWS_BUCKET_NAME,
-    Key: req.body.folder + req.body.name,
-    Body: req.file.buffer,
-    ContentType: req.file.mimetype,
-  };
+router.post("/", (req, res) => {
+  uploadSingleImage(req, res, async (uploadError) => {
+    if (uploadError) {
+      if (uploadError instanceof multer.MulterError) {
+        return res.status(400).json(uploadError.message);
+      }
 
-  try {
-    await s3.send(new PutObjectCommand(uploadParams));
-    res.status(200).json("ファイルをアップロードしました。");
-  } catch (error) {
-    res.status(500).json(`画像の登録に失敗しました。${error}`);
-  }
+      return res.status(400).json(uploadError.message);
+    }
+
+    if (!req.file) {
+      return res.status(400).send("ファイルがありません。");
+    }
+
+    const uploadParams = {
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: req.body.folder + req.body.name,
+      Body: req.file.buffer,
+      ContentType: req.file.mimetype,
+    };
+
+    try {
+      await s3.send(new PutObjectCommand(uploadParams));
+      res.status(200).json("ファイルをアップロードしました。");
+    } catch (error) {
+      res.status(500).json(`画像の登録に失敗しました。${error}`);
+    }
+  });
 });
 
 module.exports = router;

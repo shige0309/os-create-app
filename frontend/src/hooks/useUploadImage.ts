@@ -1,16 +1,19 @@
 import axios from "axios";
 import { BlogType, NewImageType, UploadImageData, WorkType } from "Type";
 
+const MAX_IMAGE_FILE_SIZE_MB = 5;
+const MAX_IMAGE_FILE_SIZE = MAX_IMAGE_FILE_SIZE_MB * 1024 * 1024;
+
 export const useUploadImage = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-  const prepareAndUploadImages = (
+  const prepareAndUploadImages = async (
     folder: string,
     thumbnail: File | null,
     descriptionImage: File | null,
     uploadData: BlogType | WorkType,
     newData: BlogType | WorkType,
-  ): BlogType | WorkType => {
+  ): Promise<BlogType | WorkType> => {
     const images: NewImageType = {
       thumbnail: thumbnail || null,
       descriptionImage: descriptionImage || null,
@@ -18,7 +21,7 @@ export const useUploadImage = () => {
 
     const nowDate: number = Date.now();
 
-    uploadImagesToServer(images, nowDate, folder);
+    await uploadImagesToServer(images, nowDate, folder);
 
     const uploadImageData: UploadImageData = {
       thumbnail:
@@ -39,38 +42,43 @@ export const useUploadImage = () => {
     nowDate: number,
     folder: string,
   ) => {
+    const uploadImages = Object.entries(images).filter(
+      (entry): entry is [string, File] => entry[1] !== null,
+    );
+
+    const oversizedImage = uploadImages.find(
+      ([, image]) => image.size > MAX_IMAGE_FILE_SIZE,
+    );
+
+    if (oversizedImage) {
+      throw new Error(
+        `ファイルサイズが大きすぎます。${MAX_IMAGE_FILE_SIZE_MB}MB以下のファイルを選択してください。`,
+      );
+    }
+
     await Promise.all(
-      Object.entries(images)
-        .filter(([image]) => image !== null)
-        .map(async ([type, image]) => {
-          if (image!.size > 2 * 1024 * 1024) {
-            alert(
-              "ファイルサイズが大きすぎます。2MB以下のファイルを選択してください。",
-            );
-            return;
-          }
+      uploadImages.map(async ([type, image]) => {
+        const data = new FormData();
 
-          const data = new FormData();
+        let fileName;
+        if (type === "thumbnail") {
+          fileName = nowDate + "-thumbnail-" + image.name;
+        } else if (type === "descriptionImage") {
+          fileName = nowDate + "-descriptionImage-" + image.name;
+        } else {
+          fileName = nowDate + image.name;
+        }
 
-          let fileName;
-          if (type === "thumbnail") {
-            fileName = nowDate + "-thumbnail-" + image!.name;
-          } else if (type === "descriptionImage") {
-            fileName = nowDate + "-descriptionImage-" + image!.name;
-          } else {
-            fileName = nowDate + image!.name;
-          }
+        data.append("name", fileName);
+        data.append("file", image);
+        data.append("folder", folder);
 
-          data.append("name", fileName);
-          data.append("file", image!);
-          data.append("folder", folder);
-
-          try {
-            await axios.post(REACT_APP_BACKEND_URL + "/imageUpload", data);
-          } catch (error) {
-            alert(`画像のアップロードに失敗しました。${error}`);
-          }
-        }),
+        try {
+          await axios.post(REACT_APP_BACKEND_URL + "/imageUpload", data);
+        } catch (error) {
+          throw new Error(`画像のアップロードに失敗しました。${error}`);
+        }
+      }),
     );
   };
 

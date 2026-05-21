@@ -71,13 +71,13 @@ export const WorksRegister = () => {
       let workData: WorkType = newWork;
 
       if (thumbnail || descriptionImage) {
-        workData = prepareAndUploadImages(
+        workData = (await prepareAndUploadImages(
           "work/",
           thumbnail,
           descriptionImage,
           workData,
-          newWork
-        ) as WorkType;
+          newWork,
+        )) as WorkType;
       }
 
       await registerWork(workData);
@@ -102,7 +102,7 @@ export const WorksRegister = () => {
 
   const operationFile = (
     e: React.ChangeEvent<HTMLInputElement>,
-    target: "Thumbnail" | "DescriptionImage"
+    target: "Thumbnail" | "DescriptionImage",
   ) => {
     if (e.target.files) {
       switch (target) {

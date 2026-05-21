@@ -29,13 +29,13 @@ export const BlogRegister = () => {
   const thumbnailInputRef = useRef<HTMLInputElement>(null);
   const descriptionImageInputRef = useRef<HTMLInputElement>(null);
   const [editorState, setEditorState] = useState<EditorState>(
-    EditorState.createEmpty(linkDecorator)
+    EditorState.createEmpty(linkDecorator),
   );
   const { prepareAndUploadImages } = useUploadImage();
   const { registerBlog } = useBlog();
   const [thumbnailURL, setThumbnailURL] = useState<string | null>(null);
   const [descriptionImageURL, setDescriptionImageURL] = useState<string | null>(
-    null
+    null,
   );
   // const [ file ]
 
@@ -64,13 +64,13 @@ export const BlogRegister = () => {
       let blogData: BlogType = newBlog;
 
       if (thumbnail || descriptionImage) {
-        blogData = prepareAndUploadImages(
+        blogData = (await prepareAndUploadImages(
           "blog/",
           thumbnail,
           descriptionImage,
           blogData,
-          newBlog
-        ) as BlogType;
+          newBlog,
+        )) as BlogType;
       }
 
       await registerBlog(blogData);
@@ -93,7 +93,7 @@ export const BlogRegister = () => {
 
   const operationFile = (
     e: React.ChangeEvent<HTMLInputElement>,
-    target: "Thumbnail" | "DescriptionImage"
+    target: "Thumbnail" | "DescriptionImage",
   ) => {
     if (e.target.files) {
       switch (target) {

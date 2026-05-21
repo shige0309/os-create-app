@@ -89,13 +89,13 @@ export const BlogUpdate = () => {
     let blogData: BlogType = newBlog;
 
     if (thumbnail || descriptionImage) {
-      blogData = prepareAndUploadImages(
+      blogData = (await prepareAndUploadImages(
         "blog/",
         thumbnail,
         descriptionImage,
         blogData,
         newBlog,
-      ) as BlogType;
+      )) as BlogType;
     }
 
     try {
