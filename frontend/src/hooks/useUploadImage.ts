@@ -38,6 +38,28 @@ const getUploadErrorMessage = (error: unknown): string => {
   return error instanceof Error ? error.message : String(error);
 };
 
+const uploadImageToS3 = async ({
+  uploadUrl,
+  image,
+  contentType,
+}: {
+  uploadUrl: string;
+  image: File;
+  contentType: string;
+}) => {
+  const response = await fetch(uploadUrl, {
+    method: "PUT",
+    headers: {
+      "Content-Type": contentType,
+    },
+    body: image,
+  });
+
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+};
+
 export const useUploadImage = () => {
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -114,10 +136,10 @@ export const useUploadImage = () => {
             },
           );
 
-          await axios.put(response.data.uploadUrl, image, {
-            headers: {
-              "Content-Type": contentType,
-            },
+          await uploadImageToS3({
+            uploadUrl: response.data.uploadUrl,
+            image,
+            contentType,
           });
         } catch (error) {
           throw new Error(
