@@ -5,6 +5,7 @@ import { BlogRegister } from "pages/Blog/BlogRegister";
 import { BlogUpdate } from "pages/Blog/BlogUpdate";
 import { Login } from "pages/Login";
 import { WorksRegister } from "pages/Work/WorksRegister";
+import { WorksUpdate } from "pages/Work/WorksUpdate";
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useAppSelector } from "stores/hooks";
@@ -33,6 +34,10 @@ export const Admin = () => {
         <Route
           path="/works/register"
           element={admin.id ? <WorksRegister /> : <Login />}
+        />
+        <Route
+          path="/works/update/:id"
+          element={admin.id ? <WorksUpdate /> : <Login />}
         />
         <Route
           path="/blog/register"

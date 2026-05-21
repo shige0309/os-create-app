@@ -13,6 +13,11 @@
   flex-direction: column;
 }
 
+.work-edit a {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
 .work-progress-circle {
   display: flex;
   justify-content: center;

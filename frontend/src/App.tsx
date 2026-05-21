@@ -13,6 +13,7 @@ import { HomePage } from "pages/Home";
 import { Login } from "pages/Login";
 import { WorkPage } from "pages/Work";
 import { WorksRegister } from "pages/Work/WorksRegister";
+import { WorksUpdate } from "pages/Work/WorksUpdate";
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useAppSelector } from "stores/hooks";
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/works/register"
             element={admin.id ? <WorksRegister /> : <Login />}
+          />
+          <Route
+            path="/works/update/:id"
+            element={admin.id ? <WorksUpdate /> : <Login />}
           />
           <Route
             path="/blog/register"

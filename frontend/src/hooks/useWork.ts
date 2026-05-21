@@ -38,5 +38,17 @@ export const useWork = () => {
     }
   };
 
-  return { registerWork, getWorks, getDetailWork };
+  const updateWork = async (
+    id: string,
+    updateData: WorkType,
+  ): Promise<void> => {
+    try {
+      await axios.put(REACT_APP_BACKEND_URL + `/work/update/${id}`, updateData);
+    } catch (error) {
+      alert(`更新に失敗しました。${error}`);
+      throw error;
+    }
+  };
+
+  return { registerWork, getWorks, getDetailWork, updateWork };
 };

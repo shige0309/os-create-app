@@ -13,10 +13,12 @@ import { SubPageTitle } from "components/SubPageTitle";
 import { WorkList } from "components/WorkList";
 import { useWork } from "hooks/useWork";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useAppSelector } from "stores/hooks";
 import { GetWorkType } from "Type";
 
 export const WorkPage = () => {
+  const { admin } = useAppSelector((state) => state);
   const { getDetailWork } = useWork();
   const id = useParams().id;
   const [work, setWork] = useState<GetWorkType>();
@@ -65,12 +67,19 @@ export const WorkPage = () => {
               </div>
             )}
             {work && (
-              <p className="work-detail">
-                <img
-                  src={PUBLIC_FOLDER + "work/" + work.descriptionImage}
-                  alt=""
-                />
-              </p>
+              <>
+                <p className="work-detail">
+                  <img
+                    src={PUBLIC_FOLDER + "work/" + work.descriptionImage}
+                    alt=""
+                  />
+                </p>
+                {admin.id ? (
+                  <p className="work-edit">
+                    <Link to={`/works/update/${work._id}`}>編集する</Link>
+                  </p>
+                ) : null}
+              </>
             )}
           </SubContent>
           <div className="homeSection">

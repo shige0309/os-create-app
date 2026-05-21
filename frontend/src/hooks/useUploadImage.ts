@@ -81,11 +81,13 @@ export const useUploadImage = () => {
 
     const uploadImageData: UploadImageData = {
       thumbnail:
-        thumbnail !== null ? nowDate + "-thumbnail-" + thumbnail.name : "",
+        thumbnail !== null
+          ? nowDate + "-thumbnail-" + thumbnail.name
+          : newData.thumbnail,
       descriptionImage:
         descriptionImage !== null
           ? nowDate + "-descriptionImage-" + descriptionImage.name
-          : "",
+          : newData.descriptionImage,
     };
 
     uploadData = { ...newData, ...uploadImageData };
